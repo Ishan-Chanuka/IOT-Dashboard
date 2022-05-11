@@ -1,0 +1,19 @@
+﻿body {
+}
+
+.border{
+    border: 5px solid black;
+    border-radius: 10px;
+}
+.unusual-content{
+    padding: 30px;
+}
+.empat{
+    padding-bottom: 20px;
+}
+.homepichart{
+    width: 400px;
+}
+.homebarchart{
+    width: 650px;
+}
