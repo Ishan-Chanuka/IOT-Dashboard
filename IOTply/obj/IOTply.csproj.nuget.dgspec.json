@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Project\\C#\\IOTPly\\IOTply\\IOTply.csproj": {}
+    "D:\\Git\\IOT-Dashboard\\IOTply\\IOTply.csproj": {}
   },
   "projects": {
-    "E:\\Project\\C#\\IOTPly\\IOTply\\IOTply.csproj": {
+    "D:\\Git\\IOT-Dashboard\\IOTply\\IOTply.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\C#\\IOTPly\\IOTply\\IOTply.csproj",
+        "projectUniqueName": "D:\\Git\\IOT-Dashboard\\IOTply\\IOTply.csproj",
         "projectName": "IOTply",
-        "projectPath": "E:\\Project\\C#\\IOTPly\\IOTply\\IOTply.csproj",
+        "projectPath": "D:\\Git\\IOT-Dashboard\\IOTply\\IOTply.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\C#\\IOTPly\\IOTply\\obj\\",
+        "outputPath": "D:\\Git\\IOT-Dashboard\\IOTply\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,6 +43,20 @@
             "Chart.js": {
               "target": "Package",
               "version": "[2.9.3, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
