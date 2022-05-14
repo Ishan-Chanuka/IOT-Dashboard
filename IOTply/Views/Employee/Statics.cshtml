@@ -15,7 +15,7 @@
                         <tr>
                             <th scope="col">Employee ID</th>
                             <th scope="col">Arrival Time</th>
-                            <th scope="col">Temperature</th>
+                            <th scope="col" class="text-center">Temperature</th>
                         </tr>
                     </thead>
 
@@ -23,12 +23,20 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.FingerPrintID</td>
-                                <td>@item.Time</td>
-                                <td>@item.Temperature</td>
+                                @if (item.TempStatus == "High")
+                                {
+                                    <td class="text-danger font-weight-bold">@item.FingerPrintID</td>
+                                    <td class="text-danger font-weight-bold">@item.Time</td>
+                                    <td class="text-center text-danger font-weight-bold">@item.Temperature</td>
+                                }
+                                else
+                                {
+                                    <td>@item.FingerPrintID</td>
+                                    <td>@item.Time</td>
+                                    <td class="text-center">@item.Temperature</td>
+                                }
                             </tr>
                         }
-
                     </tbody>
                 </table>
             }

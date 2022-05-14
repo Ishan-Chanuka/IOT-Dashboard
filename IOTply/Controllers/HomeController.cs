@@ -1,4 +1,5 @@
-﻿using IOTply.Models;
+﻿using IOTply.Data;
+using IOTply.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,15 +13,18 @@ namespace IOTply.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
         {
             _logger = logger;
+            _db = db;
         }
 
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<LogDetails> _logList = _db.LogDetails;
+            return View(_logList);
         }
 
         public IActionResult Privacy()

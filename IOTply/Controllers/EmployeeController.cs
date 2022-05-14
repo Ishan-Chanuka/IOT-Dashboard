@@ -44,5 +44,19 @@ namespace IOTply.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(EmployeeReg obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Employee.Add(obj);
+                _db.SaveChanges();
+            }
+
+            return RedirectToAction("ProfileMng");
+        }
+
     }
 }
