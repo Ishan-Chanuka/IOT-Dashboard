@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Git\\IOT-Dashboard\\IOTply\\IOTply.csproj": {}
+    "D:\\Git\\new_about\\IOT-Dashboard\\IOTply\\IOTply.csproj": {}
   },
   "projects": {
-    "D:\\Git\\IOT-Dashboard\\IOTply\\IOTply.csproj": {
+    "D:\\Git\\new_about\\IOT-Dashboard\\IOTply\\IOTply.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Git\\IOT-Dashboard\\IOTply\\IOTply.csproj",
+        "projectUniqueName": "D:\\Git\\new_about\\IOT-Dashboard\\IOTply\\IOTply.csproj",
         "projectName": "IOTply",
-        "projectPath": "D:\\Git\\IOT-Dashboard\\IOTply\\IOTply.csproj",
+        "projectPath": "D:\\Git\\new_about\\IOT-Dashboard\\IOTply\\IOTply.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Git\\IOT-Dashboard\\IOTply\\obj\\",
+        "outputPath": "D:\\Git\\new_about\\IOT-Dashboard\\IOTply\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,13 +44,21 @@
               "target": "Package",
               "version": "[2.9.3, )"
             },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.16, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.16, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.17, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.17, )"
+              "version": "[5.0.16, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

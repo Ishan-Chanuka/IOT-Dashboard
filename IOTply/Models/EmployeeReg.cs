@@ -10,7 +10,7 @@ namespace IOTply.Models
     {
         [Key]
         public int EmpID { get; set; }
-        public int FingerPrintID { get; set; }
+        public string FingerPrintID { get; set; }
         public string EmpName { get; set; }
         public string MobileNo { get; set; }
         public string Address { get; set; }

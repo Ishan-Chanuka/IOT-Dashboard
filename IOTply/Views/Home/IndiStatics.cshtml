@@ -1,4 +1,4 @@
-﻿
+﻿@model IOTply.Controllers.HomeController.ModelCollection
 @{
     ViewData["Title"] = "IndiStatics";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,55 +8,63 @@
     <div class="row">
         <div class="col-lg-6">
             <h3 class="text-primary empat">Employee Attendance</h3>
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">Arrival Time</th>
-                        <th scope="col">Temperature</th>
-                    </tr>
-                </thead>
+            @if (Model.list.Count() > 0)
+            {
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Arrival Time</th>
+                            <th scope="col">Temperature</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    <tr>
-                        <td>10.00</td>
-                        <td>32 C</td>
-                    </tr>
-                </tbody>
-            </table>
+                    <tbody>
+                        @foreach (var item in Model.list)
+                        {
+                            <tr>
+                                @if (item.TempStatus == "High")
+                                {
+                                    <td class="text-danger font-weight-bold">@item.Time</td>
+                                    <td class="text-center text-danger font-weight-bold">@item.Temperature</td>
+                                }
+                                else
+                                {
+                                    <td>@item.Time</td>
+                                    <td class="text-center">@item.Temperature</td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
         </div>
         <div class="col-lg-6">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="border">
                         <div class="unusual-content form-group">
-                            <h5 class="text-primary">Employee ID</h5>
-                            <input type="text" class="form-control" placeholder="20244" />
-                            <a class="btn btn-primary btn-block mt-3 text-light">Search</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="border">
-                        <div class="unusual-content form-group">
-                            <h5 class="text-primary">Employee ID</h5>
-                            <input type="text" class="form-control" placeholder="20244" />
-                            <a class="btn btn-primary btn-block mt-3 text-light">Search</a>
+                            <h5 class="text-primary">Employee Details</h5>
+                            @foreach (var item in Model.emplist)
+                            {
+                                <h6 class="text">Name: @item.EmpName</h6>
+                                <h6 class="text">Email: @item.Email</h6>
+                            }
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="border">
                         <div class="unusual-content form-group">
                             <h5 class="text-primary">Highest Temperature</h5>
-                            <a class="btn btn-primary btn-block mt-3 text-light">Date</a>
-                            <a class="btn btn-primary btn-block mt-3 text-light">Temperature</a>
+                            <h6 class="text-danger">Date: @Model.date</h6>
+                            <h6 class="text-danger">Temperature: @Model.maxtemp</h6>
                         </div>
                     </div>
                 </div>
             </div>
 
-            
+
 
             <div class="row">
                 <div class="ml-5 mt-5 homepichart">

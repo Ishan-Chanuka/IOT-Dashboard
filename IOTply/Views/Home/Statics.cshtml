@@ -1,4 +1,4 @@
-﻿@model IEnumerable<IOTply.Models.LogDetails>
+﻿@model IOTply.Controllers.HomeController.ModelCollection
 @{
     ViewData["Title"] = "Statics";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,27 +8,35 @@
     <div class="row">
         <div class="col-lg-6">
             <h3 class="text-primary empat">Employee Attendance</h3>
-            @if (Model.Count() > 0)
+            @if (Model.list.Count() > 0)
             {
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">Employee ID</th>
                             <th scope="col">Arrival Time</th>
-                            <th scope="col">Temperature</th>
+                            <th scope="col" class="text-center">Temperature</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        @foreach (var item in Model)
+                        @foreach (var item in Model.list)
                         {
                             <tr>
-                                <td>@item.FingerPrintID</td>
-                                <td>@item.Time</td>
-                                <td>@item.Temperature</td>
+                                @if (item.TempStatus == "High")
+                                {
+                                    <td class="text-danger font-weight-bold">@item.FingerPrintID</td>
+                                    <td class="text-danger font-weight-bold">@item.Time</td>
+                                    <td class="text-center text-danger font-weight-bold">@item.Temperature</td>
+                                }
+                                else
+                                {
+                                    <td>@item.FingerPrintID</td>
+                                    <td>@item.Time</td>
+                                    <td class="text-center">@item.Temperature</td>
+                                }
                             </tr>
                         }
-
                     </tbody>
                 </table>
             }
@@ -37,11 +45,13 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="ml-5 mb-2 border">
-                        <div class="unusual-content form-group">
-                            <h5 class="text-primary">Employee ID</h5>
-                            <input type="text" class="form-control" placeholder="20244" />
-                            <a class="btn btn-primary btn-block mt-3 text-light" asp-controller="Home" asp-action="IndiStatics">Search</a>
-                        </div>
+                        <form method="post" asp-action="IndiStatics">
+                            <div class="unusual-content form-group">
+                                <h5 class="text-primary">Employee ID</h5>
+                                <input type="text" class="form-control" name="fingerprint" placeholder="20244"/>
+                                <button type="submit" class="btn btn-primary btn-block mt-3 text-light">Search</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-md-6">

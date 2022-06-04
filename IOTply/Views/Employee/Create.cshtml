@@ -8,18 +8,18 @@
     <div class="card">
         <div class="card-body">
             <h3 class="text-primary empat">User Registration</h3>
-            <form>
+            <form method="post" asp-action="Create">
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
                             <label for="Name">Name</label>
-                            <input type="text" class="form-control" asp-for="EmpName" placeholder="Name">
+                            <input type="text" class="form-control" asp-for="EmpName" placeholder="Name" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-group">
                             <label for="Mobile">Mobile No.</label>
-                            <input type="text" class="form-control" asp-for="MobileNo" placeholder="Mobile No">
+                            <input type="text" class="form-control" asp-for="MobileNo" placeholder="Mobile No" />
                         </div>
                     </div>
                 </div>
@@ -28,13 +28,13 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="Address">Address</label>
-                            <input type="text" class="form-control" asp-for="Address" placeholder="Address">
+                            <input type="text" class="form-control" asp-for="Address" placeholder="Address" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-group">
                             <label for="Post">Post</label>
-                            <input type="text" class="form-control" asp-for="Post" placeholder="Post">
+                            <input type="text" class="form-control" asp-for="Post" placeholder="Post" />
                         </div>
                     </div>
                 </div>
@@ -54,16 +54,25 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="username">Email</label>
-                            <input type="text" class="form-control" asp-for="Email" placeholder="Email">
+                            <input type="text" class="form-control" asp-for="Email" placeholder="Email" />
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" asp-for="Password" placeholder="Password">
+                    <label for="exampleInputPassword1">Fingerprint ID</label>
+                    <input type="text" class="form-control" asp-for="FingerPrintID" />
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" asp-for="Password" placeholder="Password" />
+                </div>
+
+
+                <div class="form-group pt-3">
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                </div>
             </form>
         </div>
     </div>
