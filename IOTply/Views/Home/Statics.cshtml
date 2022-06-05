@@ -48,7 +48,7 @@
                         <form method="post" asp-action="IndiStatics">
                             <div class="unusual-content form-group">
                                 <h5 class="text-primary">Employee ID</h5>
-                                <input type="text" class="form-control" name="fingerprint" placeholder="20244"/>
+                                <input type="text" class="form-control" name="fingerprint" placeholder="1" />
                                 <button type="submit" class="btn btn-primary btn-block mt-3 text-light">Search</button>
                             </div>
                         </form>
@@ -56,31 +56,31 @@
                 </div>
                 <div class="col-md-6">
                     <div class="ml-5 border">
-                        <div class="unusual-content form-group">
-                            <h5 class="text-primary">Absentees</h5>
-                            <input type="text" class="form-control" placeholder="20244" />
-                            <a class="btn btn-primary btn-block mt-3 text-light">Search</a>
-                        </div>
+                        <form method="post" asp-action="TempofDate">
+                            <div class="unusual-content form-group">
+                                <h5 class="text-primary">Date</h5>
+                                <input type="text" class="form-control" name="date" placeholder="YYYY-MM-DD" />
+                                <button type="submit" class="btn btn-primary btn-block mt-3 text-light">Search</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="ml-5 border">
-                        <div class="unusual-content form-group">
-                            <h5 class="text-primary">Date</h5>
-                            <input type="text" class="form-control" placeholder="YYYY-MM-DD" />
-                            <a class="btn btn-primary btn-block mt-3 text-light">Search</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="ml-5 border">
-                        <div class="unusual-content form-group">
-                            <h5 class="text-primary">Temperature</h5>
-                            <input type="text" class="form-control" placeholder="32.23" />
-                            <a class="btn btn-primary btn-block mt-3 text-light">Search</a>
-                        </div>
+                        <form method="post" asp-action="TempDetails">
+                            <div class="unusual-content form-group">
+                                <h5 class="text-primary">Temperature Status</h5>
+                                <select class="form-control" name="tempstatus">
+                                    <option value="Low">Low</option>
+                                    <option value="Moderate">Moderate</option>
+                                    <option value="High">High</option>
+                                </select>
+
+                                <button type="submit" class="btn btn-primary btn-block mt-3 text-light">Search</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

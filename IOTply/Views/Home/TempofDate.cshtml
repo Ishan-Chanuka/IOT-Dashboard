@@ -1,0 +1,61 @@
+﻿@model IOTply.Controllers.HomeController.ModelCollection
+
+@{
+    ViewData["Title"] = "TempofDate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <h3 class="text-primary empat">Highest Temperature Recorded On @Model.date</h3>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Employee Fingerprint ID</th>
+                        <th scope="col" class="text-center">Temperature</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model.list)
+                    {
+                        <tr>
+                            @if (item.TempStatus == "High")
+                            {
+                                <td class="text-danger font-weight-bold">@item.FingerPrintID</td>
+                                <td class="text-center text-danger font-weight-bold">@item.Temperature</td>
+                            }
+                            else
+                            {
+                                <td>@item.FingerPrintID</td>
+                                <td class="text-center">@item.Temperature</td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <table class="table" style="margin-top: 95px;">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Employee Fingerprint ID</th>
+                        <th scope="col" class="text-center">Employee Name</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model.emplist)
+                    {
+                        <tr>
+                            <td class="text font-weight-bold">@item.FingerPrintID</td>
+                            <td class="text-center text font-weight-bold">@item.EmpName</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

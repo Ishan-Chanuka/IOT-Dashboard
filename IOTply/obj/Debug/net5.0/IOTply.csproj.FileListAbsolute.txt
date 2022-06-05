@@ -437,3 +437,5 @@ D:\Git\new_about\IOT-Dashboard\IOTply\obj\Debug\net5.0\Razor\Areas\Identity\Page
 D:\Git\new_about\IOT-Dashboard\IOTply\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 D:\Git\new_about\IOT-Dashboard\IOTply\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 D:\Git\new_about\IOT-Dashboard\IOTply\obj\Debug\net5.0\Razor\Views\Home\Statics.cshtml.g.cs
+D:\Git\new_about\IOT-Dashboard\IOTply\obj\Debug\net5.0\Razor\Views\Home\TempofDate.cshtml.g.cs
+D:\Git\new_about\IOT-Dashboard\IOTply\obj\Debug\net5.0\Razor\Views\Home\TempDetails.cshtml.g.cs

@@ -43,6 +43,7 @@ namespace IOTply.Controllers
             public LogDetails LogModel { get; set; }
             public IEnumerable<LogDetails> list { get; set; }
             public IEnumerable<EmployeeReg> emplist { get; set; }
+            public JoinEmpLog JoinEmp { get; set; }
             public string maxtemp { get; set; }
             public DateTime date { get; set; }
 
@@ -77,7 +78,30 @@ namespace IOTply.Controllers
             return View(collection);
         }
 
+        [HttpPost]
+        public IActionResult TempofDate(string date)
+        {
+            ModelCollection collection = new();
+            DateTime date1;
 
+            DateTime.TryParse(date, out date1);
+            collection.list = _db.LogDetails.Where(l => l.Date == date1);
+            collection.emplist = _db.Employee;            
+
+            collection.date = date1;
+
+            return View(collection);
+        }
+
+        [HttpPost]
+        public IActionResult TempDetails(string tempstatus)
+        {
+            DateTime currentDate = DateTime.Today;
+            ModelCollection collection = new();
+            collection.list = _db.LogDetails.Where(t => t.TempStatus == tempstatus && t.Date == currentDate);
+
+            return View(collection);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
